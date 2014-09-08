@@ -13,7 +13,6 @@ Built in plain HTML, Javascript and CSS
 
 ## Projects and People
 
-The [projects](http://opengovhacknight.org/projects.html) and [people](http://opengovhacknight.org/people.html) pages are powered by [Github](https://github.com/) and [civic-json-worker](https://github.com/open-city/civic-json-worker), 
-a script we run every 5 minutes that fetches data from the [Github API](http://developer.github.com/). 
+The [projects](http://http://opensatx.org/projects) and [people](http://http://opensatx.org/people) pages are powered by the [CfAPI](https://github.com/codeforamerica/cfapi). They update once an hour. 
 
 The JSON files are backed up every hour in the [civic-json-files](https://github.com/open-city/civic-json-files) repository.

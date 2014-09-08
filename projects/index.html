@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projects - openSATX</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.js"></script>
+      <script src="../js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class='col-md-12'>
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+
+            <li><a href="/events.html">Events</a></li>
+            <li class="active"><a href="/projects">Projects</a></li>
+            <li><a href="/people">People</a></li>
+            <li><a href="/resources.html">Resources</a></li>
+          </ul>
+          <h3 class="text-muted"><a href="http://opensatx.org" >openSATX</a></h3>
+        </div>
+
+        <!-- Begin page content-->
+        <h1>Projects <small id='project-count'></small></h1>
+
+        <p>Open source civic tech projects from San Antonio's open gov community.</p>
+
+
+        <table id='hack-night-projects' class='table'>
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+
+<!-- Define the template for data loaded from the CFAPI -->
+<script id="projects" type="text/html">
+
+{{#projects}}
+  <tr>
+    <td style="word-wrap: break-word;">
+      <h1>{{name}}</h1>
+      {{#link_url}}
+      <a href="{{link_url}}">{{link_url}}</a>
+      <br />
+      {{/link_url}}
+      {{#code_url}}
+      <a href="{{code_url}}">{{code_url}}</a>
+      <br />
+      {{/code_url}}
+      <strong>Last Updated: </strong>{{last_updated_formatted}}
+      <br />
+      {{#github_details}}
+      <strong>Language: </strong>{{language}}
+      {{/github_details}}
+    </td>
+    <td>
+      <h3>{{github_details.description}}</h3>
+      {{#github_details}}<strong>GitHub Contributors</strong>{{/github_details}}
+      <p class='contributors'>
+        {{#github_details.owner}}
+        <a href='{{html_url}}' class='contributor-owner'><img class='img-thumbnail' src='{{avatar_url}}' alt='Owner: {{login}}' title='Owner: {{login}}'/></a>
+        <span style='display: none;'>{{login}}</span>
+        {{/github_details.owner}}
+        {{#github_details.contributors}}
+        {{^owner}}
+        <a href='{{html_url}}'><img class='img-thumbnail' src='{{avatar_url}}' alt='{{login}}' title='{{login}}'/></a>
+        <span style='display: none;'>{{login}}</span>
+        {{/owner}}
+        {{/github_details.contributors}}
+      </p>
+    </td>
+  {{/projects}}
+
+  </script>
+
+<hr/>
+
+Powered by the <a href="https://github.com/codeforamerica/cfapi">CfAPI</a>. This project list is from <a href="https://github.com/opensatx">https://github.com/opensatx</a>.
+        <!-- End page content-->
+
+        <div class="footer">
+          <p class='pull-right'>&copy; openSATX 2014 | <a href='https://github.com/opensatx/opensatx.github.io'><i class='icon-github'></i> Pull requests welcome!</a></p>
+        </div>
+      </div>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ICanHaz.js/0.10.3/ICanHaz.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.2/moment.min.js"></script>
+    <script src="../js/projects.js"></script>
