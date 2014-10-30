@@ -43,24 +43,23 @@
         <p>Open source civic tech projects from San Antonio's open gov community.</p>
 
 
-        <table id='hack-night-projects' class='table'>
-          <thead>
-            <tr>
-              <th>Project</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+        <section>
+          <div class="row">
+            <div class="col-sm-4 hidden-xs">Project</div>
+            <div class="col-sm-offset-1 col-sm-7 hidden-xs">Description</div>
+          </div>
+          <hr />
+          <div id="hack-night-projects">
+          </div>
+        </section>
 
 
 <!-- Define the template for data loaded from the CFAPI -->
 <script id="projects" type="text/html">
 
 {{#projects}}
-  <tr>
-    <td style="word-wrap: break-word;">
+  <div class="row">
+    <div class="col-sm-4" style="word-break: break-all;">
       <h1>{{name}}</h1>
       {{#link_url}}
       <a href="{{link_url}}">{{link_url}}</a>
@@ -75,9 +74,9 @@
       {{#github_details}}
       <strong>Language: </strong>{{language}}
       {{/github_details}}
-    </td>
-    <td>
-      <h3>{{github_details.description}}</h3>
+    </div>
+    <div class="col-sm-offset-1 col-sm-7">
+      <h3>{{description}}</h3>
       {{#github_details}}<strong>GitHub Contributors</strong>{{/github_details}}
       <p class='contributors'>
         {{#github_details.owner}}
@@ -91,7 +90,9 @@
         {{/owner}}
         {{/github_details.contributors}}
       </p>
-    </td>
+    </div>
+  </div>
+  <hr />
   {{/projects}}
 
   </script>
